@@ -23,6 +23,24 @@ namespace Horchateria.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult Register(int? id)
+        {
+            return View();
+        }
+       
+        [HttpPost]
+        public IActionResult AddUser(string fname, string lname, string email, string phonenumber, string password)
+        {
+            ViewData["fname"] = fname;
+            ViewData["lname"] = lname;
+            ViewData["fullname"] = fname + " " + lname;
+            ViewData["email"] = email;
+            ViewData["phonenumber"] = phonenumber;
+            ViewData["password"] = password;
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
