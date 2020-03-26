@@ -3,20 +3,20 @@
     ViewData["Title"] = "Register";
 }
 
-<div class="container" align="center">
-    <h2>Please fill the form to register</h2> <br/> <br/>
+<div class="container" align="justify">
+    <h2>Please fill the form to register</h2> <br/>
 
     <form action="/Home/AddUser" method="post">
     
-         Name: <input type="text" name="fname" maxlength="20" /> <br /> <br />
+        Name: <input type="text" name="fname" maxlength="20" placeholder="Name" class="form-control" required/> <br />
 
-        Last Name: <input type="text" name="lname" maxlength="20" /> <br /> <br />
+        Last Name: <input type="text" name="lname" maxlength="20" placeholder="Last Name" class="form-control" required/> <br />
 
-        Email: <input type="email" name="email" /> <br /> <br />
+        Email: <input type="email" name="email" placeholder="name@example.com" class="form-control" required/> <br />
 
-        Phone Number: <input type="number" name="phonenumber" /> <br /> <br />
+        Phone Number: <input type="number" name="phonenumber" class="form-control" required/> <br />
 
-        Password: <input type="password" name="password" maxlength="30" /> <br /><br />
+        Password: <input type="password" name="password" minlength="6"  class="form-control" required/> <br />
 
         <input type="submit" value="Register!" />
     </form>
