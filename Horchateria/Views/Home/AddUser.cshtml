@@ -1,11 +1,12 @@
-﻿
+﻿@model Horchateria.Models.UserData
+
 @{
     ViewData["Title"] = "AddUser";
 }
 
 <div class="text-center">
-    <h1 class="display-1">Gracias @ViewData["fname"]!</h1> <br />
+    <h1 class="display-1">Gracias @Model.FirstName!</h1> <br />
     <h1>Welcome to the family at Horchateria!</h1>
-    <p>Your email <b>@ViewData["email"]</b> has been added to Horchateria's email list!</p>
+    <p>Your email <b>@Model.Email</b> has been added to Horchateria's email list!</p>
     <img src="~/coffeeheart.gif" alt="coffee heart" width="300" height="300">
 </div>

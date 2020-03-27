@@ -30,15 +30,10 @@ namespace Horchateria.Controllers
         }
        
         [HttpPost]
-        public IActionResult AddUser(string fname, string lname, string email, string phonenumber, string password)
+        [ValidateAntiForgeryToken]
+        public IActionResult AddUser(UserData userInput)
         {
-            ViewData["fname"] = fname;
-            ViewData["lname"] = lname;
-            ViewData["fullname"] = fname + " " + lname;
-            ViewData["email"] = email;
-            ViewData["phonenumber"] = phonenumber;
-            ViewData["password"] = password;
-            return View();
+            return View(userInput);
         }
 
         public IActionResult Privacy()

@@ -1,4 +1,4 @@
-﻿
+﻿@model Horchateria.Models.UserData
 @{
     ViewData["Title"] = "Register";
 }
@@ -6,17 +6,19 @@
 <div class="container" align="justify">
     <h2>Please fill the form to register</h2> <br/>
 
-    <form action="/Home/AddUser" method="post">
+    <form asp-action="AddUser" asp-action="AddUser" method="post">
     
-        Name: <input type="text" name="fname" maxlength="20" placeholder="Name" class="form-control" required/> <br />
+        @Html.LabelFor(m => m.FirstName): @Html.EditorFor(m => m.FirstName,
+          new { htmlAttributes = new { @class = "form-control" }  } )<br />
+       
+        @Html.LabelFor(m => m.LastName): @Html.EditorFor(m => m.LastName,
+          new { htmlAttributes = new { @class = "form-control" }  } )<br />
 
-        Last Name: <input type="text" name="lname" maxlength="20" placeholder="Last Name" class="form-control" required/> <br />
+        @Html.LabelFor(m => m.Email): <input asp-for="Email" class="form-control"/> <br/>
 
-        Email: <input type="email" name="email" placeholder="name@example.com" class="form-control" required/> <br />
+        @Html.LabelFor(m => m.PhoneNumber): <input asp-for="PhoneNumber" class="form-control"/> <br/>
 
-        Phone Number: <input type="number" name="phonenumber" class="form-control" required/> <br />
-
-        Password: <input type="password" name="password" minlength="6"  class="form-control" required/> <br />
+        @Html.LabelFor(m => m.Password): <input asp-for="Password" class="form-control"/> <br/>
 
         <input type="submit" value="Register!" />
     </form>
