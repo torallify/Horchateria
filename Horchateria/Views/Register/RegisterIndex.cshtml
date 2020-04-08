@@ -1,0 +1,52 @@
+﻿@model Horchateria.Models.UserData
+
+@{
+    ViewData["Title"] = "RegisterIndex";
+}
+
+@{
+    if (ViewData["errorMsg"] != null)
+    {
+        <h4 class="text-danger">
+            <strong>@ViewData["errorMsg"]</strong>
+        </h4>
+    }
+}
+<div class="container" align="justify">
+    <h2>Please fill the form to register</h2>
+    <br />
+
+    <form asp-action="Register" asp-action="Register" method="post">
+
+        @Html.LabelFor(m => m.FirstName): @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger" }) @Html.EditorFor(m => m.FirstName,
+new { htmlAttributes = new { @class = "form-control" } })<br />
+
+        @Html.LabelFor(m => m.LastName): @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" }) @Html.EditorFor(m => m.LastName,
+new { htmlAttributes = new { @class = "form-control" } }) <br />
+
+        @Html.LabelFor(m => m.Email): @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })<input asp-for="Email" type="email" class="form-control" placeholder="name@example.com" /> <br />
+
+        @Html.LabelFor(m => m.Password): @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" }) <input asp-for="Password" type="password" class="form-control" /> <br />
+
+
+        @Html.LabelFor(m => m.PhoneNumber): @Html.ValidationMessageFor(m => m.PhoneNumber, "", new { @class = "text-danger" }) <input asp-for="PhoneNumber" class="form-control" /> <br />
+
+        @Html.LabelFor(m => m.Gender)
+        <select asp-for="Gender" class="form-control">
+            <option>Female</option>
+            <option>Male</option>
+            <option>Other</option>
+        </select><br />
+
+        @Html.LabelFor(m => m.SpanishSpeaker)
+        <select asp-for="Gender" class="form-control">
+            <option>¡Claro que si!</option>
+            <option>Sorry, no spanish here.</option>
+        </select><br />
+
+        <input type="submit" value="Register!" />
+    </form>
+</div>
+
+
+

@@ -23,26 +23,6 @@ namespace Horchateria.Controllers
             return View();
         }
 
-        [HttpGet]
-        public IActionResult Register(int? id)
-        {
-            return View();
-        }
-       
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult AddUser(UserData userInput)
-        {
-            if (ModelState.IsValid)
-            {
-                return View(userInput);
-            }
-            else
-            {
-                ViewData["errorMsg"] = "Your form had errors. Please correct and re-submit";
-                return View("Register", userInput);
-            }
-        }
 
         public IActionResult Privacy()
         {
