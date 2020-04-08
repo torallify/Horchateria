@@ -33,7 +33,15 @@ namespace Horchateria.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult AddUser(UserData userInput)
         {
-            return View(userInput);
+            if (ModelState.IsValid)
+            {
+                return View(userInput);
+            }
+            else
+            {
+                ViewData["errorMsg"] = "Your form had errors. Please correct and re-submit";
+                return View("Register", userInput);
+            }
         }
 
         public IActionResult Privacy()

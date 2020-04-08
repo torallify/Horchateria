@@ -14,6 +14,8 @@ namespace Horchateria.Models
         private string email;
         private string phoneNumber;
         private string password;
+        private string gender;
+        private string spanishSpeaker;
 
         [DisplayName("First Name")]
         [Required]
@@ -35,11 +37,21 @@ namespace Horchateria.Models
         [DisplayName("Phone Number")]
         [DataType(DataType.PhoneNumber)]
         [Required]
+        [MinLength(10)]
         public string PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
 
         [DisplayName("Password")]
+        [PasswordPropertyText]
         [DataType(DataType.Password)]
         [Required]
+        [MinLength(6)]
         public string Password { get => password; set => password = value; }
+
+        [DisplayName("Gender")]
+        [Required]
+        public string Gender { get => gender; set => gender = value; }
+        
+        [DisplayName("¿Hablas español?")]
+        public string SpanishSpeaker { get => spanishSpeaker; set => spanishSpeaker = value; }
     }
 }
