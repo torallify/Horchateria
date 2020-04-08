@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewData["Title"] = "ProductIndex";
+    IEnumerable<Product> Products = (List<Product>)ViewData["Products"];
+}
+
+<div class="text-justify">
+    <h1 class="display-4">Horchateria's Menu:</h1>
+    <ul>
+        @foreach (Product p in Products)
+        {
+            <li>@p.Name  (@p.Category) @p.Description $@p.Price</li>
+        }
+    </ul>
+</div>
+
