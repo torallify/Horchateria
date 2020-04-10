@@ -1,7 +1,7 @@
 ﻿
 @{
     ViewData["Title"] = "ProductIndex";
-    IEnumerable<Product> Products = (List<Product>)ViewData["Products"];
+    List<Product> Products = (List<Product>)ViewData["Products"];
 }
 
 <div class="text-justify">
@@ -9,7 +9,7 @@
     <ul>
         @foreach (Product p in Products)
         {
-            <li>@p.Name  (@p.Category) @p.Description $@p.Price</li>
+            <li><a href="/Product/Cat?cat=@p.Category">@p.Category</a></li>
         }
     </ul>
 </div>

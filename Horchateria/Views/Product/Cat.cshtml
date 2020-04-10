@@ -1,0 +1,14 @@
+﻿
+@{
+    <!-- there's a little lie here -->
+    List<Product> Products = (List<Product>)ViewData["Products"];
+}
+
+<h1>@ViewData["Title"]</h1>
+<ul>
+    @foreach (Product p in Products)
+    {
+        <li><a href="/Product/Detail/@p.Id">@p.Name</a></li>
+    }
+</ul>
+
